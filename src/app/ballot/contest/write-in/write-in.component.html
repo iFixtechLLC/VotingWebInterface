@@ -1,0 +1,20 @@
+<div class="choice" [ngClass]="{ 'selected': isSelected }">
+    <div class="choice-upper">
+        <button class="select-area" (click)="toggleSelected(writeIn)" [disabled]="isDisabled">
+            <span class="select-inner">
+                <svg-icon [src]="iconSrc" class="choice-icon"></svg-icon>
+                <div class="choice-text">
+                    <div class="choice-title">
+                        {{ title | async }}
+                    </div>
+                </div>
+            </span>
+        </button>
+    </div>
+    <div class="write-in">
+        <input #writeIn type="text"
+                [ngModel]="choiceSelection.choice"
+                [disabled]="!isSelected || isDisabled"
+                (ngModelChange)="updateWriteIn($event)">
+    </div>
+</div>

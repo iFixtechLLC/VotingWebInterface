@@ -1,0 +1,41 @@
+<div class="elect-toolbar top">
+    <div class="toolbar-background"></div>
+    <div class="toolbar-content">
+        <div class="election-info">
+            <img *ngIf="electionLogo | async" [src]="electionLogo | async" class="election-logo no-select">
+            <div class="election-title">
+                {{ electionTitle | async }}
+            </div>
+        </div>
+        <div class="elect-actions">
+            <div ngbDropdown class="elect-action" *ngIf="showLanguageMenu()">
+                <button class="action-button" id="language-select" ngbDropdownToggle (click)="closeDialogs()">
+                    <svg-icon src="assets/icons/action/language.svg" class="elect-action-icon"></svg-icon>
+                    <span class="action-text">{{ currentLanguage() }}</span>
+                    <svg-icon src="assets/icons/navigation/carrot-down.svg" class="elect-action-caret"></svg-icon>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="language-select">
+                    <button class="dropdown-item" *ngFor="let lang of languages" (click)="changeLanguage(lang.id)">{{ lang.localizedname }}</button>
+                </div>
+            </div>
+            <div class="elect-action">
+                <a class="action-button" [routerLink]="['settings', { from: returnPath }]" routerLinkActive="active" (click)="closeDialogs()">
+                    <svg-icon src="assets/icons/action/settings.svg" class="elect-action-icon"></svg-icon>
+                    <span class="action-text">{{ settings | async }}</span>
+                </a>
+            </div>
+            <div class="elect-action">
+                <a class="action-button" [routerLink]="['help', { from: returnPath }]" routerLinkActive="active" (click)="closeDialogs()">
+                    <svg-icon src="assets/icons/action/help-solid.svg" class="elect-action-icon"></svg-icon>
+                    <span class="action-text">{{ help | async }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="view-container">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="elect-bottom-toolbar-backdrop"></div>

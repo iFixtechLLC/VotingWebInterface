@@ -1,0 +1,30 @@
+<div class="settings-header">
+    <div class="settings-back">
+        <a [routerLink]="['../']">
+            <svg-icon class="settings-back-icon" src="assets/icons/navigation/carrot-left.svg"></svg-icon>
+            {{ back | async }}
+        </a>
+    </div>
+    <button type="button" class="settings-reset" (click)="resetBlackout()">
+        {{ reset | async }}
+    </button>
+</div>
+<div class="settings-subheader">
+    {{ blackoutSub | async }}
+</div>
+
+<div class="settings-menu">
+    <div class="blackout-help">
+        {{ blackoutHelp | async }} <span class="active-value">{{ blackoutActive ? (blackoutOff | async) : (blackoutOn | async) }}</span>
+    </div>
+
+    <div class="blackout-toggle">
+        <button type="button" (click)="toggleBlackout()" [ngClass]="{ 'active': blackoutActive }"
+                class="option-button blackout-toggle-button">
+            <svg-icon src="assets/icons/action/blackout.svg" class="blackout-icon"></svg-icon>
+        </button>
+        <div class="blackout-status">
+            {{ blackoutStatus | async }} <span class="active-value">{{ blackoutActive ? (blackoutOn | async) : (blackoutOff | async) }}</span>
+        </div>
+    </div>
+</div>

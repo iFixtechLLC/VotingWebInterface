@@ -1,0 +1,39 @@
+@import '../../../hc-theme';
+
+.high-contrast {
+  :host {
+    .settings-icon {
+      fill: $hc-color;
+    }
+
+    .settings-arrow-icon {
+      fill: $hc-color;
+    }
+
+    .settings-item {
+      a {
+        border-color: $hc-border-color;
+        color: $hc-color;
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    .settings-icon {
+      fill: $hc-inverted-color;
+    }
+
+    .settings-arrow-icon {
+      fill: $hc-inverted-color;
+    }
+
+    .settings-item {
+      a {
+        border-color: $hc-inverted-border-color;
+        color: $hc-inverted-color;
+      }
+    }
+  }
+}

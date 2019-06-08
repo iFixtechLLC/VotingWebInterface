@@ -1,0 +1,25 @@
+<div class="choice" [ngClass]="{ 'selected': isSelected }">
+        <div class="choice-upper">
+            <button class="select-area no-select" (click)="rank()" [disabled]="isSelected || isDisabled">
+                <div class="select-inner">
+                    <svg-icon src="assets/icons/selection/check-inactive.svg" class="choice-icon" *ngIf="!isSelected"></svg-icon>
+                    <div class="choice-icon rank" *ngIf="isSelected">{{ choiceSelection.weight }}</div>
+                    <img [src]="imgSrc | async" class="choice-image" *ngIf="imgSrc | async">
+                    <div class="choice-text">
+                        <div class="choice-title">
+                            {{ title | async }}
+                        </div>
+                        <div class="choice-group" *ngIf="group | async">
+                            {{ group | async }}
+                        </div>
+                        <div class="choice-description" *ngIf="description | async">
+                            {{ description | async }}
+                        </div>
+                    </div>
+                </div>
+            </button>
+            <a (click)="emitShowDetails()" class="more-info" *ngIf="canShowDetails | async">
+                {{ moreInfo | async }}
+            </a>
+        </div>
+    </div>

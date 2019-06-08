@@ -1,0 +1,34 @@
+<div class="ballot-content">
+    <div class="blackout-screen" *ngIf="blackout">
+        <markdown [md]="blackoutMessage | async"></markdown>
+    </div>
+    <div class="scroll-content review-scroll">
+        <div class="ballot-header">
+            <div class="ballot-header-title">
+                {{ title | async }}
+            </div>
+        </div>
+        <markdown [md]="message | async" class="review-message"></markdown>
+        <div class="review-contests">
+            <contest-review *ngFor="let contest of contests; let i = index"
+                [contest]="contest"
+                [index]="getIndex(contest)"
+            >
+            </contest-review>
+        </div>
+        <div class="end-of-list">
+            {{ endOfList | async }}
+        </div>
+    </div>
+</div>
+
+<div class="elect-toolbar bottom">
+    <div class="toolbar-background"></div>
+    <div class="toolbar-content">
+        <div class="elect-action">
+            <button type="button" class="action-button" (click)="submitVote()">
+                <span class="action-text">{{ submit | async }}</span>
+            </button>
+        </div>
+    </div>
+</div>

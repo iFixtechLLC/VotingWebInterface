@@ -1,0 +1,187 @@
+@import '../../../hc-theme';
+
+.high-contrast {
+  :host {
+    /deep/ {
+      .date-pick {
+        border-color: $hc-border-color;
+
+        &:focus {
+          border-color: $hc-border-color;
+          border-style: dashed;
+        }
+      }
+    }
+
+    .auth-content {
+      @media screen and (max-width: $breakpoint-mobile-lg) {
+        background-color: $hc-background-color;
+      }
+    }
+
+    .settings-bar {
+      background-color: $hc-background-color;
+      border-color: $hc-border-color;
+    }
+
+    .settings-button {
+      .button-inner {
+        color: $hc-color;
+      }
+    }
+
+    .auth-header {
+      background-color: $hc-background-color;
+
+      .header-title {
+        color: $hc-color;
+      }
+    }
+
+    .auth-resume {
+      @media screen and (min-width: $breakpoint-mobile-lg) {
+        border-color: $hc-border-color;
+      }
+
+      .resume-icon {
+        fill: $hc-color;
+        stroke: $hc-color;
+      }
+    }
+
+    .auth-inputs {
+      background-color: $hc-background-color;
+    }
+
+    .form-group {
+      input {
+        border-color: $hc-border-color;
+
+        &:focus {
+          border-color: $hc-border-color;
+          border-style: dashed;
+        }
+      }
+    }
+
+    .elect-toolbar {
+      .action-button {
+        background-color: $hc-background-color;
+        border-color: $hc-border-color;
+
+        &[disabled] {
+          background-color: $hc-background-color;
+          border-color: $hc-border-color;
+
+          .action-text {
+            color: $hc-color;
+          }
+        }
+
+        .action-text {
+          color: $hc-color;
+        }
+      }
+    }
+  }
+
+  .input-group {
+    .input-icon {
+      fill: $hc-color;
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    /deep/ {
+      .date-pick {
+        border-color: $hc-inverted-border-color;
+
+        &:focus {
+          border-color: $hc-inverted-border-color;
+          border-style: dashed;
+        }
+      }
+    }
+
+    .auth-content {
+      @media screen and (max-width: $breakpoint-mobile-lg) {
+        background-color: $hc-inverted-background-color;
+      }
+    }
+
+    .auth-header {
+      background-color: $hc-inverted-background-color;
+
+      .header-title {
+        color: $hc-inverted-color;
+      }
+    }
+
+    .settings-bar {
+      background-color: $hc-inverted-background-color;
+      border-color: $hc-inverted-border-color;
+    }
+
+    .settings-button {
+      .button-inner {
+        color: $hc-inverted-color;
+      }
+    }
+
+    .auth-resume {
+      @media screen and (min-width: $breakpoint-mobile-lg) {
+        border-color: $hc-inverted-border-color;
+      }
+
+      .resume-icon {
+        fill: $hc-inverted-color;
+        stroke: $hc-inverted-color;
+      }
+    }
+
+    .auth-inputs {
+      background-color: $hc-inverted-background-color;
+    }
+
+    .form-group {
+      input {
+        background-color: $hc-inverted-background-color;
+        border-color: $hc-inverted-border-color;
+        color: $hc-inverted-color;
+
+        &:focus {
+          border-color: $hc-inverted-border-color;
+          border-style: dashed;
+        }
+      }
+    }
+
+    .elect-toolbar {
+      .action-button {
+        background-color: $hc-inverted-background-color;
+        border-color: $hc-inverted-border-color;
+
+        &[disabled] {
+          background-color: $hc-inverted-background-color;
+          border-color: $hc-inverted-border-color;
+
+          .action-text {
+            color: $hc-inverted-color;
+          }
+        }
+
+        .action-text {
+          color: $hc-inverted-color;
+        }
+      }
+    }
+  }
+
+  .input-group {
+    .input-icon {
+      fill: $hc-inverted-color;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import '../../hc-theme';
+
+.high-contrast {
+  :host {
+    /deep/ {
+      .help-content {
+        background-color: $hc-background-color;
+
+        .help-header {
+          background-color: $hc-background-color;
+
+          .help-header-title {
+            color: $hc-color;
+          }
+        }
+      }
+
+      .domain-info {
+        border-top-color: $hc-border-color;
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    /deep/ {
+      .help-content {
+        background-color: $hc-inverted-background-color;
+
+        .help-header {
+          background-color: $hc-inverted-background-color;
+
+          .help-header-title {
+            color: $hc-inverted-color;
+          }
+        }
+      }
+
+      .domain-info {
+        border-top-color: $hc-inverted-border-color;
+      }
+    }
+  }
+}

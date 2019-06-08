@@ -1,0 +1,49 @@
+@import '../../../../hc-theme';
+
+.high-contrast {
+  :host {
+    border-color: $hc-border-color;
+
+    .contest-review-selected {
+      color: $hc-color;
+    }
+
+    .write-in {
+      border-color: $hc-border-color;
+    }
+
+    choice-summary {
+      border-color: $hc-border-color;
+    }
+
+    .change-selection {
+      background-color: $hc-background-color;
+      border-color: $hc-border-color;
+      color: $hc-color;
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    border-color: $hc-inverted-border-color;
+
+    .contest-review-selected {
+      color: $hc-inverted-color;
+    }
+
+    .write-in {
+      border-color: $hc-inverted-border-color;
+    }
+
+    choice-summary {
+      border-color: $hc-inverted-border-color;
+    }
+
+    .change-selection {
+      background-color: $hc-inverted-background-color;
+      border-color: $hc-inverted-border-color;
+      color: $hc-inverted-color;
+    }
+  }
+}

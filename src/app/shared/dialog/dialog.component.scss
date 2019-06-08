@@ -1,0 +1,142 @@
+@import '../../../variables';
+@import '../../../theme';
+
+:host {
+  display: block;
+  height: 100%;
+  min-height: $dialog-min-height;
+  width: 100%;
+}
+
+/deep/ {
+  .dialog-icon {
+    g,
+    path {
+      fill: $dialog-accent-color;
+    }
+  }
+
+  .warning {
+    .dialog-icon {
+      g,
+      path {
+        fill: $dialog-warning-color;
+      }
+    }
+  }
+
+  .error {
+    .dialog-icon {
+      g,
+      path {
+        fill: $dialog-error-color;
+      }
+    }
+  }
+}
+
+.dialog {
+  background-color: $dialog-background-color;
+  border-radius: 10px;
+  flex-direction: column;
+  height: 100%;
+  min-height: $dialog-min-height;
+  padding: 25px 25px 100px;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: $breakpoint-mobile-lg) {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+}
+
+.header,
+.content {
+  padding-bottom: 25px;
+}
+
+.header {
+  align-items: center;
+  color: $dialog-accent-color;
+  display: block;
+  font-size: 2.7rem;
+  font-weight: bold;
+
+  @media screen and (min-width: $breakpoint-mobile-lg) {
+    display: flex;
+  }
+}
+
+.dialog-icon {
+  height: 90px;
+  margin-right: 25px;
+  width: 90px;
+
+
+  @media screen and (min-width: $breakpoint-mobile-lg) {
+    flex: 0 0 120px;
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.dialog-icon,
+.header-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.content {
+  font-size: 1.3rem;
+  line-height: 2.3rem;
+}
+
+.actions {
+  align-items: center;
+  bottom: 25px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: calc(100% - 50px);
+
+  @media screen and (min-width: $breakpoint-mobile-lg) {
+    width: calc(100% - 110px);
+  }
+
+  button {
+    background-color: transparent;
+    border: 3px solid $dialog-accent-color;
+    border-radius: 500px;
+    color: $dialog-accent-color;
+    cursor: pointer;
+    flex: 1 1 auto;
+    font-size: 1.3rem;
+    padding: 10px;
+
+    & + button {
+      margin-left: 30px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.confirm {
+      background-color: $dialog-accent-color;
+      color: $dialog-background-color;
+    }
+  }
+}
+
+.warning {
+  .header {
+    color: $dialog-warning-color;
+  }
+}
+
+.error {
+  .header {
+    color: $dialog-error-color;
+  }
+}

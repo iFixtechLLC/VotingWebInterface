@@ -1,0 +1,49 @@
+@import '../../hc-theme';
+
+.high-contrast {
+  :host {
+    /deep/ {
+      .ballot-header {
+        background-color: $hc-background-color;
+        border-color: $hc-border-color;
+
+        .ballot-header-title {
+          color: $hc-color;
+        }
+      }
+
+      .ballot-content {
+        background-color: $hc-background-color;
+      }
+
+      .blackout-screen {
+        background-color: $hc-background-color;
+        color: $hc-color;
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    /deep/ {
+      .ballot-header {
+        background-color: $hc-inverted-background-color;
+        border-color: $hc-inverted-border-color;
+
+        .ballot-header-title {
+          color: $hc-inverted-color;
+        }
+      }
+
+      .ballot-content {
+        background-color: $hc-inverted-background-color;
+      }
+
+      .blackout-screen {
+        background-color: $hc-inverted-background-color;
+        color: $hc-inverted-color;
+      }
+    }
+  }
+}

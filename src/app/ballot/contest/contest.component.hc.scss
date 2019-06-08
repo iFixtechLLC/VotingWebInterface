@@ -1,0 +1,35 @@
+@import '../../../hc-theme';
+
+.high-contrast {
+  :host {
+    .contest-status {
+      background-color: $hc-background-color;
+      border-bottom-color: $hc-border-color;
+    }
+
+    .ranked-actions {
+      button {
+        background-color: $hc-background-color;
+        border-color: $hc-border-color;
+        color: $hc-color;
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    .contest-status {
+      background-color: $hc-inverted-background-color;
+      border-bottom-color: $hc-inverted-border-color;
+    }
+
+    .ranked-actions {
+      button {
+        background-color: $hc-inverted-background-color;
+        border-color: $hc-inverted-border-color;
+        color: $hc-inverted-color;
+      }
+    }
+  }
+}

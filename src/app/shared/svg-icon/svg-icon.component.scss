@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  user-select: none;
+
+  /deep/ {
+    svg {
+      fill: inherit;
+      max-height: 100%;
+      max-width: 100%;
+      stroke: inherit;
+    }
+
+    g,
+    path {
+      fill: inherit;
+      stroke: inherit;
+    }
+  }
+}
+
+

@@ -1,0 +1,47 @@
+@import '../../../hc-theme';
+
+.high-contrast {
+  :host {
+    .date-pick {
+      background-color: $hc-background-color;
+    }
+
+    .slash {
+      color: $hc-color;
+    }
+
+    .form-group {
+      input {
+        border-color: $hc-border-color;
+
+        &:focus {
+          border-color: $hc-border-color;
+          border-style: dashed;
+        }
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    .date-pick {
+      background-color: $hc-inverted-background-color;
+    }
+
+    .slash {
+      color: $hc-inverted-color;
+    }
+
+    .form-group {
+      input {
+        border-color: $hc-inverted-border-color;
+
+        &:focus {
+          border-color: $hc-inverted-border-color;
+          border-style: dashed;
+        }
+      }
+    }
+  }
+}

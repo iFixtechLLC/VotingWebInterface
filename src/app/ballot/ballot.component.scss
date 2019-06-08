@@ -1,0 +1,108 @@
+@import '../../theme';
+
+$ballot-header-title-height: 37px;
+$top-toolbar-height: 90px;
+
+.ballot-summary {
+  @media screen and (min-width: $breakpoint-mobile-lg) {
+    display: none;
+  }
+}
+
+.logout {
+  @media screen and (max-width: $breakpoint-mobile-lg) {
+    display: none;
+  }
+}
+
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  /deep/ {
+    ballot-view {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      // NOTE EVS-9674 Fixing height so Safari can use it to correctly get
+      // height of flex items
+      height: 100%;
+      position: relative;
+      width: 100%;
+    }
+
+    .ballot-header {
+      align-items: center;
+      background-color: $ballot-header-background-color;
+      border-bottom: 1px solid $ballot-header-border-color;
+      display: flex;
+      margin: 0;
+      max-width: $breakpoint-mobile-lg;
+      padding: 5px 15px;
+      width: 100%;
+
+      @media screen and (min-width: $breakpoint-mobile-lg) {
+        // align-items: flex-end;
+        padding-top: 30px;
+      }
+
+      .ballot-header-title {
+        color: $ballot-header-color;
+        flex: 1 1 auto;
+        font-size: 1.8rem;
+        font-weight: bold;
+        min-height: $ballot-header-title-height;
+
+        @media screen and (min-width: $breakpoint-mobile-lg) {
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    .ballot-content {
+      -webkit-overflow-scrolling: touch;
+      background-color: $ballot-content-background-color;
+      flex: 1 1 0%;
+      overflow-y: auto;
+      padding: 1px 0;
+      // position: relative;
+      width: 100%;
+
+      .scroll-content {
+        margin: 0 auto 15px;
+        max-width: $breakpoint-mobile-lg;
+        padding: 0;
+        width: 100%;
+      }
+    }
+
+    .blackout-screen {
+      align-items: center;
+      background-color: $blackout-background-color;
+      color: $blackout-color;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      left: 0;
+      padding: 15px;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .end-of-list {
+      font-size: .9rem;
+      font-weight: bold;
+      padding: 3px;
+      text-align: center;
+    }
+  }
+}

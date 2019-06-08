@@ -1,0 +1,50 @@
+<div class="settings-header">
+    <div class="settings-back">
+        <a [routerLink]="['../']">
+            <svg-icon class="settings-back-icon" src="assets/icons/navigation/carrot-left.svg"></svg-icon>
+            {{ back | async }}
+        </a>
+    </div>
+    <button type="button" class="settings-reset" (click)="resetTextSize()">
+        {{ reset | async }}
+    </button>
+</div>
+<div class="settings-subheader">
+    {{ textSizeSub | async }}
+</div>
+<div class="settings-menu">
+    <div class="settings-option" [ngClass]="{ 'active': currentTextSize === 'x-small' }">
+        <label for="xsmallText" class="option-label">
+            <svg-icon src="assets/icons/action/text-size.svg" class="text-size-icon small"></svg-icon>
+        </label>
+        <button type="button" (click)="setTextSize('x-small')" id="xsmallText" class="option-button"></button>
+    </div>
+    <div class="settings-option" [ngClass]="{ 'active': currentTextSize === 'small' }">
+        <button type="button" (click)="setTextSize('small')" id="smallText" class="option-button"></button>
+    </div>
+    <div class="settings-option" [ngClass]="{ 'active': currentTextSize === 'normal' }">
+        <label for="normalText" class="option-label">
+            <svg-icon src="assets/icons/action/text-size.svg" class="text-size-icon"></svg-icon>
+        </label>
+        <button type="button" (click)="setTextSize('normal')" id="normalText" class="option-button"></button>
+    </div>
+    <div class="settings-option" [ngClass]="{ 'active': currentTextSize === 'large' }">
+        <button type="button" (click)="setTextSize('large')" id="largeText" class="option-button"></button>
+    </div>
+    <div class="settings-option" [ngClass]="{ 'active': currentTextSize === 'x-large' }">
+        <label for="xlargeText" class="option-label">
+            <svg-icon src="assets/icons/action/text-size.svg" class="text-size-icon large"></svg-icon>
+        </label>
+        <button type="button" (click)="setTextSize('x-large')" id="xlargeText" class="option-button"></button>
+    </div>
+    <div class="settings-line"></div>
+</div>
+
+<div class="example-text">
+    <div class="example-text-header">
+        {{ exampleTextTitle | async }} | <span class="active-value">{{ currentTextSize | activeTextSize | async }}</span>
+    </div>
+    <div class="example-text-body">
+        {{ exampleText | async }}
+    </div>
+</div>

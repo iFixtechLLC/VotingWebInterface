@@ -1,0 +1,84 @@
+@import '../../../theme';
+
+.settings-header {
+  margin-bottom: 10px;
+}
+
+.settings-menu {
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px;
+  position: relative;
+}
+
+.settings-option {
+  height: 70px;
+  margin: 0;
+  position: relative;
+  width: 40px;
+}
+
+.text-size-icon {
+  bottom: 45px;
+  height: 24px;
+  left: 8px;
+  position: absolute;
+  width: 24px;
+
+  &.small {
+    height: 16px;
+    left: 12px;
+    width: 16px;
+  }
+
+  &.large {
+    height: 34px;
+    left: 3px;
+    width: 34px;
+  }
+}
+
+.option-button {
+  background-color: $settings-text-size-button-background-color;
+  border-color: $settings-text-size-button-color;
+  border-radius: 20px;
+  border-width: 3px;
+  bottom: 0;
+  height: 40px;
+  position: absolute;
+  width: 40px;
+  z-index: 2;
+}
+
+.active {
+  .option-button {
+    background-color: $settings-text-size-button-color;
+  }
+}
+
+.settings-line {
+  border-top: 2px solid $settings-text-size-line-color;
+  bottom: 34px;
+  left: 35px;
+  position: absolute;
+  width: calc(100% - 70px);
+  z-index: 1;
+}
+
+.example-text {
+  font-size: 1rem;
+  padding: 10px 15px;
+
+  .example-text-header {
+    padding: 5px 0;
+  }
+
+  .active-value {
+    font-weight: bold;
+  }
+
+  .example-text-body {
+    border: 1px solid $settings-example-text-border-color;
+    padding: 10px 8px;
+  }
+}

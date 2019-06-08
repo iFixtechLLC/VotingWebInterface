@@ -1,0 +1,46 @@
+<div class="settings-header">
+    <div class="settings-header-title">
+        {{ header | async }}
+    </div>
+    <button type="button" class="settings-reset" (click)="resetSettings()">
+        {{ resetAll | async }}
+    </button>
+</div>
+
+<div class="settings">
+    <div class="settings-item">
+        <a [routerLink]="['text-size']">
+            <svg-icon src="assets/icons/action/text-size.svg" class="settings-icon"></svg-icon>
+            <div class="settings-label">
+                {{ textSize | async }}
+            </div>
+            <svg-icon src="assets/icons/navigation/carrot-right.svg" class="settings-arrow-icon"></svg-icon>
+        </a>
+    </div>
+    <div class="settings-item">
+        <a [routerLink]="['contrast']">
+            <svg-icon src="assets/icons/action/contrast.svg" class="settings-icon"></svg-icon>
+            <div class="settings-label">
+                {{ contrast | async }}
+            </div>
+            <svg-icon src="assets/icons/navigation/carrot-right.svg" class="settings-arrow-icon"></svg-icon>
+        </a>
+    </div>
+    <div class="settings-item">
+        <a [routerLink]="['blackout']">
+            <svg-icon src="assets/icons/action/blackout.svg" class="settings-icon"></svg-icon>
+            <div class="settings-label">
+                {{ blackout | async }}
+            </div>
+            <svg-icon src="assets/icons/navigation/carrot-right.svg" class="settings-arrow-icon"></svg-icon>
+        </a>
+    </div>
+    <div class="settings-item logout" *ngIf="loggedIn">
+        <a class="no-select" (click)="logout()">
+            <svg-icon src="assets/icons/action/log-out.svg" class="settings-icon"></svg-icon>
+            <div class="settings-label">
+                {{ logoutButton | async }}
+            </div>
+        </a>
+    </div>
+</div>

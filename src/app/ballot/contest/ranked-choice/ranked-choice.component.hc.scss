@@ -1,0 +1,97 @@
+@import '../../../../hc-theme';
+
+.high-contrast {
+  :host {
+    border-color: $hc-border-color;
+
+    .choice {
+      &.selected {
+        background-color: $hc-background-color;
+      }
+
+      .select-area {
+        &[disabled] {
+          color: $hc-color;
+          opacity: 1;
+        }
+
+        &:focus {
+          border-color: $hc-border-color;
+        }
+      }
+    }
+
+    .choice-icon {
+      &.rank {
+        color: $hc-color;
+      }
+    }
+
+    /deep/ {
+      .choice-icon {
+        g,
+        path {
+          fill: $hc-color;
+          stroke: $hc-color;
+        }
+      }
+    }
+
+    .more-info {
+      color: $hc-color;
+
+      &:focus {
+        border-color: $hc-border-color;
+        color: $hc-color;
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    border-color: $hc-inverted-border-color;
+
+    .choice {
+      &.selected {
+        background-color: $hc-inverted-background-color;
+      }
+
+      .select-area {
+        &[disabled] {
+          color: $hc-inverted-color;
+          opacity: 1;
+        }
+
+        &:focus {
+          border-color: $hc-inverted-border-color;
+        }
+      }
+    }
+
+    .choice-icon {
+      &.rank {
+        color: $hc-inverted-color;
+      }
+    }
+
+    /deep/ {
+      .choice-icon {
+        g,
+        path {
+          fill: $hc-inverted-color;
+          stroke: $hc-inverted-color;
+        }
+      }
+    }
+
+    .more-info {
+      color: $hc-inverted-color;
+
+      &:focus {
+        border-color: $hc-inverted-border-color;
+        color: $hc-inverted-color;
+      }
+    }
+  }
+}

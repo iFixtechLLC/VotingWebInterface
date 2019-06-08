@@ -1,0 +1,159 @@
+@import '../../../theme';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: $summary-sidebar-width;
+  z-index: 1;
+
+  &.sidebar {
+    background-color: $summary-background-color;
+    flex: 0 0 $summary-sidebar-width;
+    height: 100%;
+
+    .blackout-screen {
+      background-color: $summary-blackout-background-color;
+      border-right: 1px solid $summary-border-color;
+    }
+
+    .ballot-header,
+    .summary-message,
+    .contest-summary-text,
+    .ballot-filler {
+      border-right: 1px solid $summary-border-color;
+    }
+
+    .bottom {
+      border-color: $summary-border-color;
+      border-right: 1px solid $summary-border-color;
+    }
+
+    .elect-action {
+      &:only-child {
+        .action-button {
+          background-color: $summary-review-background-color;
+          border-color: $summary-background-color;
+        }
+
+        .action-text {
+          color: $summary-review-color;
+          font-size: .9rem;
+        }
+      }
+    }
+
+    .scroll-content {
+      margin: 0;
+    }
+
+    .summary-message {
+      margin: 0;
+      padding: 15px;
+    }
+
+    .ballot-header {
+      border-bottom-color: $summary-header-border-color;
+      display: block;
+      margin-bottom: 0;
+      padding-top: 5px;
+
+      .ballot-header-title {
+        color: $summary-header-color;
+        font-size: 1.4rem;
+        font-weight: normal;
+      }
+    }
+
+    contest-summary {
+      border-bottom-width: 0;
+
+      &:first-child {
+        border-top-width: 0;
+      }
+    }
+
+    .end-of-list {
+      display: none;
+    }
+
+    /deep/ {
+      .contest-summary-text {
+        border-bottom: 1px solid transparent;
+        border-right: 1px solid $summary-border-color;
+        border-top: 1px solid transparent;
+
+        &.done {
+          background-color: transparent;
+        }
+
+        &.active {
+          background-color: $contest-summary-active-background-color;
+          border-right-width: 0;
+        }
+      }
+    }
+  }
+}
+
+.ballot-header {
+  .ballot-header-title {
+    align-items: center;
+    display: flex;
+  }
+
+  background-color: transparent;
+}
+
+.ballot-content {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.ballot-complete {
+  align-items: center;
+  display: flex;
+}
+
+.complete-icon {
+  display: inline-block;
+  height: 25px;
+  margin-left: 8px;
+  width: 25px;
+}
+
+.summary-progress {
+  flex: 0 0 auto;
+  text-align: left;
+}
+
+.scroll-content {
+  &.summary-scroll {
+    flex: 0 0 auto;
+    padding: 0;
+  }
+}
+
+.ballot-filler {
+  flex: 1 1 auto;
+}
+
+.summary-message {
+  display: block;
+  padding: 30px 15px;
+}
+
+.summary-contests {
+  width: 100%;
+}
+
+contest-summary {
+  border-bottom: 1px solid $contest-summary-border-color;
+
+  &:first-child {
+    border-top: 1px solid $contest-summary-border-color;
+  }
+}

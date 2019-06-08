@@ -1,0 +1,113 @@
+<div class="ballot-main">
+    <ballot-view class="summary sidebar"></ballot-view>
+    <div class="ballot-contest">
+        <div #ballotContent class="ballot-content" *ngIf="!(details | async)" (scroll)="handleScroll()">
+            <div class="blackout-screen" *ngIf="blackout">
+                <markdown [md]="blackoutMessage | async"></markdown>
+            </div>
+            <div class="scroll-content contest-scroll">
+                <div class="ballot-header" *ngIf="(title | async) && !(details | async)">
+                    <div class="ballot-header-title">
+                        <h2>{{ title | async }}</h2>
+
+                        <p *ngIf="subtitle | async">
+                            {{ subtitle | async }}
+                        </p>
+                    </div>
+                </div>
+                <div class="contest-instructions">
+                    <markdown [md]="preMessage | async" class="contest-message pre" *ngIf="preMessage | async"></markdown>
+                    <div #contestStatus class="contest-status" *ngIf="contest && contest.choices" [ngClass]="{ 'fixed': statusFixed }">
+                        <div class="contest-limit" *ngIf="selection">
+                            {{ selection.selectedCount }} / {{ contest.rules.maxselectable }} {{ selected | async }}
+                        </div>
+                        <div class="contest-next" *ngIf="contest.rules.voting === 'ranked-choice'">
+                            <span *ngIf="selection.selectedCount < contest.rules.maxselectable">
+                                {{ nextRank | async }} {{ selection.selectedCount + 1 }}
+                            </span>
+                            <span *ngIf="selection.selectedCount === contest.rules.maxselectable">
+                                {{ rankComplete | async }}
+                            </span>
+                        </div>
+                        <div class="ranked-actions" *ngIf="contest.rules.voting === 'ranked-choice'">
+                            <button type="button" (click)="undoRank()" [disabled]="selection.selectedCount === 0">{{ undo | async }}</button>
+                            <button type="button" (click)="clearRank()" [disabled]="selection.selectedCount === 0">{{ clear | async }}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contest-choices" *ngIf="contest && contest.choices">
+                    <div class="simple-choices" *ngIf="contest.rules.voting === 'simple'">
+                        <simple-choice *ngFor="let choice of contest.choices; let i = index"
+                            [choice]="choice"
+                            [limit]="contest.rules.maxselectable"
+                            [contestIndex]="contestIndex"
+                            [index]="i"
+                            (showDetails)="showDetails($event)"
+                        >
+                        </simple-choice>
+                        <contest-write-in *ngIf="contest.writein"
+                            [limit]="contest.rules.maxselectable"
+                            [contestIndex]="contestIndex"
+                        >
+                        </contest-write-in>
+                    </div>
+                    <div class="ranked-choices" *ngIf="contest.rules.voting === 'ranked-choice'">
+                        <ranked-choice *ngFor="let choice of contest.choices; let i = index"
+                            [choice]="choice"
+                            [limit]="contest.rules.maxselectable"
+                            [contestIndex]="contestIndex"
+                            [index]="i"
+                            (showDetails)="showDetails($event)"
+                        >
+                        </ranked-choice>
+                    </div>
+                    <div class="end-of-list">
+                        {{ endOfList | async }}
+                    </div>
+                </div>
+                <markdown [md]="postMessage | async" class="contest-message post" *ngIf="postMessage | async"></markdown>
+            </div>
+        </div>
+        <div class="elect-toolbar bottom" *ngIf="!(details | async)">
+            <div class="toolbar-background"></div>
+            <div class="toolbar-content">
+                <div class="elect-action">
+                    <a class="action-button" [routerLink]="[ '/ballot', 'contest', contestIndex - 1 ]"
+                        *ngIf="contestIndex > 0">
+                        <div class="action-icon-container">
+                            <svg-icon src="assets/icons/navigation/carrot-left.svg" class="elect-action-icon"></svg-icon>
+                        </div>
+                        <span class="action-text">{{ previous | async }}</span>
+                    </a>
+                </div>
+                <div class="elect-action">
+                    <a class="action-button" [routerLink]="nextLink" [ngClass]="{'high': contestComplete }">
+                        <div class="action-icon-container next-contest-icon">
+                            <svg-icon src="assets/icons/navigation/carrot-right.svg" class="elect-action-icon"></svg-icon>
+                        </div>
+                        <span class="action-text">{{ next | async }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="ballot-content" *ngIf="details | async">
+            <div class="scroll-content">
+                <div class="details">
+                    <markdown [md]="details | async"></markdown>
+                </div>
+            </div>
+        </div>
+
+        <div class="elect-toolbar bottom" *ngIf="details | async">
+            <div class="toolbar-background"></div>
+            <div class="toolbar-content">
+                <div class="elect-action">
+                    <a class="action-button" (click)="clearDetails()">
+                        <span class="action-text">{{ return | async }}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+@import '../../../../theme';
+
+:host {
+  display: block;
+  padding: 15px 0;
+
+  &:last-child {
+    @media screen and (min-width: $breakpoint-mobile-lg) {
+      padding-bottom: 6px;
+    }
+  }
+}

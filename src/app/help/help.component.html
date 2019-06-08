@@ -1,0 +1,26 @@
+<div class="help-content">
+    <div class="scroll-content">
+        <div class="help-body">
+            <div class="help-header">
+                <div class="help-header-title">
+                    {{ header | async }}
+                </div>
+            </div>
+            <markdown class="help-text" [md]="text | async"></markdown>
+        </div>
+        <div class="domain-info">
+            {{ electionId }} | {{ periodId }}
+        </div>
+    </div>
+</div>
+
+<div class="elect-toolbar bottom">
+    <div class="toolbar-background"></div>
+    <div class="toolbar-content">
+        <div class="elect-action">
+            <a class="action-button" [routerLink]="returnPath" [queryParams]="returnParams">
+                <span class="action-text">{{ return | async }}</span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+@import '../../../theme';
+
+.settings-header {
+  margin-bottom: 10px;
+}
+
+.settings-menu {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.settings-option {
+  margin: 0 15px 30px;
+}
+
+.option-button {
+  height: 120px;
+  width: 120px;
+
+  &.normal {
+    background-color: $settings-contrast-button-background-color;
+    border-color: $settings-contrast-button-border-color;
+    color: $settings-contrast-button-color;
+  }
+
+  &.bow {
+    background-color: $settings-contrast-bow-button-background-color;
+    border-color: $settings-contrast-bow-button-color;
+    color: $settings-contrast-bow-button-color;
+  }
+
+  &.wob {
+    background-color: $settings-contrast-wob-button-background-color;
+    border-color: $settings-contrast-wob-button-color;
+    color: $settings-contrast-wob-button-color;
+  }
+}

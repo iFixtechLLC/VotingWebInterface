@@ -1,0 +1,193 @@
+@import '../../../hc-theme';
+
+.high-contrast {
+  :host {
+    /deep/ {
+      .dialog-icon {
+        g,
+        path {
+          fill: $hc-color;
+        }
+      }
+
+      .warning {
+        .dialog-icon {
+          g,
+          path {
+            fill: $hc-color;
+          }
+        }
+      }
+
+      .error {
+        .dialog-icon {
+          g,
+          path {
+            fill: $hc-color;
+          }
+        }
+      }
+    }
+
+    .dialog {
+      &.warning {
+        background-color: $hc-background-color;
+        color: $hc-color;
+      }
+
+      &.error {
+        background-color: $hc-background-color;
+        color: $hc-color;
+      }
+    }
+
+    .header {
+      color: $hc-color;
+    }
+
+    .actions {
+      button {
+        border-color: $hc-color;
+        color: $hc-color;
+      }
+
+      .confirm {
+        background-color: $hc-background-color;
+        color: $hc-color;
+      }
+    }
+
+    .warning {
+      .header {
+        color: $hc-color;
+      }
+
+      .actions {
+        button {
+          border-color: $hc-color;
+          color: $hc-color;
+
+          &.confirm {
+            background-color: $hc-background-color;
+            color: $hc-color;
+          }
+        }
+      }
+    }
+
+    .error {
+      .header {
+        color: $hc-color;
+      }
+
+      .actions {
+        button {
+          border-color: $hc-color;
+          color: $hc-color;
+
+          &.confirm {
+            background-color: $hc-background-color;
+            color: $hc-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    /deep/ {
+      .dialog-icon {
+        g,
+        path {
+          fill: $hc-inverted-color;
+        }
+      }
+
+      .warning {
+        .dialog-icon {
+          g,
+          path {
+            fill: $hc-inverted-color;
+          }
+        }
+      }
+
+      .error {
+        .dialog-icon {
+          g,
+          path {
+            fill: $hc-inverted-color;
+          }
+        }
+      }
+    }
+
+    .dialog {
+      background-color: $hc-inverted-background-color;
+
+      &.warning {
+        background-color: $hc-inverted-background-color;
+        color: $hc-inverted-color;
+      }
+
+      &.error {
+        background-color: $hc-inverted-background-color;
+        color: $hc-inverted-color;
+      }
+    }
+
+    .header {
+      color: $hc-inverted-color;
+    }
+
+    .actions {
+      button {
+        border-color: $hc-inverted-color;
+        color: $hc-inverted-color;
+      }
+
+      .confirm {
+        background-color: $hc-inverted-background-color;
+        color: $hc-inverted-color;
+      }
+    }
+
+    .warning {
+      .header {
+        color: $hc-inverted-color;
+      }
+
+      .actions {
+        button {
+          border-color: $hc-inverted-color;
+          color: $hc-inverted-color;
+
+          &.confirm {
+            background-color: $hc-inverted-background-color;
+            color: $hc-inverted-color;
+          }
+        }
+      }
+    }
+
+    .error {
+      .header {
+        color: $hc-inverted-color;
+      }
+
+      .actions {
+        button {
+          border-color: $hc-inverted-color;
+          color: $hc-inverted-color;
+
+          &.confirm {
+            background-color: $hc-inverted-background-color;
+            color: $hc-inverted-color;
+          }
+        }
+      }
+    }
+  }
+}

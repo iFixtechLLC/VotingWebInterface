@@ -1,0 +1,82 @@
+<form class="auth-form" (ngSubmit)="onSubmit()" [formGroup]="credentials"
+        *ngIf="electionStatus === 1" [@loginForm]="electionStatus === 1">
+    <div class="auth-content">
+        <div class="scroll-content">
+            <div class="auth-header">
+                <div class="header-logo">
+                    <img *ngIf="electionLogo | async" [src]="electionLogo | async">
+                </div>
+                <div class="header-title">
+                    {{ electionTitle | async }}
+                </div>
+            </div>
+            <div class="auth-resume" *ngIf="resume">
+                <svg-icon class="resume-icon" src="assets/icons/action/warning-outline.svg"></svg-icon>
+                <div class="resume-message">
+                    {{ resumeMessage | async }}
+                </div>
+            </div>
+            <div class="auth-inputs">
+                <div class="auth-instructions" *ngIf="!resume">
+                    <markdown [md]="preMessage | async"></markdown>
+                </div>
+                <div class="form-group" *ngFor="let input of inputs; let i=index">
+                    <label [attr.for]="input.key">
+                        {{ inputText[i].label | async }}
+                    </label>
+                    <div class="input-group" *ngIf="input.controlType === 'textbox'">
+                        <input #authInput [type]="input.type" [formControlName]="input.key" autocomplete="off">
+                        <svg-icon src="assets/icons/navigation/navigation_map-complete.svg" *ngIf="isValid(input.key)" class="input-icon"></svg-icon>
+                    </div>
+                    <auth-dob *ngIf="input.controlType === 'date-select'" [formControlName]="input.key" [format]="input.format"></auth-dob>
+                </div>
+            </div>
+        </div>
+        <img class="powered-by" [src]="poweredBySrc | async">
+    </div>
+
+    <div class="elect-toolbar bottom">
+        <div class="toolbar-background"></div>
+        <div class="toolbar-content">
+            <div class="elect-action auth-action">
+                <button type="submit" class="action-button" [disabled]="!canSubmit">
+                    <span class="action-text">{{ submitText | async }}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="election-not-open" *ngIf="electionStatus === 0" [@tooEarly]="electionStatus === 0">
+    <div class="auth-header">
+        <div class="header-logo">
+            <img *ngIf="electionLogo | async" [src]="electionLogo | async">
+        </div>
+        <div class="header-title">
+            {{ electionTitle | async }}
+        </div>
+    </div>
+    <div class="not-open-message">
+        <svg-icon src="assets/icons/action/warning-outline.svg" class="not-open-icon"></svg-icon>
+        <span class="not-open-text">
+            <markdown [md]="tooEarly | async"></markdown>
+            <div class="open-time">{{ openTime | date:'medium' }}</div>
+        </span>
+    </div>
+</div>
+<div class="election-not-open" *ngIf="electionStatus === 2">
+    <div class="auth-header">
+        <div class="header-logo">
+            <img *ngIf="electionLogo | async" [src]="electionLogo | async">
+        </div>
+        <div class="header-title">
+            {{ electionTitle | async }}
+        </div>
+    </div>
+    <div class="not-open-message">
+        <svg-icon src="assets/icons/action/warning-outline.svg" class="not-open-icon"></svg-icon>
+        <span class="not-open-text">
+            <markdown [md]="tooLate | async"></markdown>
+        </span>
+    </div>
+</div>

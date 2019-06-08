@@ -1,0 +1,27 @@
+@import '../../../../theme';
+
+:host {
+  display: block;
+  padding: 15px 0;
+
+  &:last-child {
+    @media screen and (min-width: $breakpoint-mobile-lg) {
+      padding-bottom: 6px;
+    }
+  }
+}
+
+.choice-title {
+  align-items: center;
+  display: flex;
+}
+
+.rank {
+  flex: 0 0 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.title {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,48 @@
+<div class="input-group" *ngIf="!format || format === 'big'">
+    <!--select year-->
+    <select name="year" class="date-pick" [(ngModel)]="selectedYear" (change)="onDateChange()">
+        <option *ngFor="let year of years" [ngValue]="year.value">{{ year.label }}</option>
+    </select>
+    <div class="slash">/</div>
+    <!--select month-->
+    <select name="month" class="date-pick" [(ngModel)]="selectedMonth" (change)="onDateChange()">
+        <option *ngFor="let month of months" [ngValue]="month.value">{{ month.label }}</option>
+    </select>
+    <div class="slash">/</div>
+    <!--select day-->
+    <select name="Day" class="date-pick" [(ngModel)]="selectedDay" (change)="onDateChange()">
+        <option *ngFor="let day of days" [ngValue]="day.value">{{ day.label }}</option>
+    </select>
+</div>
+<div class="input-group" *ngIf="format === 'middle'">
+    <!--select month-->
+    <select name="month" class="date-pick" [(ngModel)]="selectedMonth" (change)="onDateChange()">
+        <option *ngFor="let month of months" [ngValue]="month.value">{{ month.label }}</option>
+    </select>
+    <div class="slash">/</div>
+    <!--select day-->
+    <select name="Day" class="date-pick" [(ngModel)]="selectedDay" (change)="onDateChange()">
+        <option *ngFor="let day of days" [ngValue]="day.value">{{ day.label }}</option>
+    </select>
+    <div class="slash">/</div>
+    <!--select year-->
+    <select name="year" class="date-pick" [(ngModel)]="selectedYear" (change)="onDateChange()">
+        <option *ngFor="let year of years" [ngValue]="year.value">{{ year.label }}</option>
+    </select>
+</div>
+<div class="input-group" *ngIf="format === 'little'">
+    <!--select day-->
+    <select name="Day" class="date-pick" [(ngModel)]="selectedDay" (change)="onDateChange()">
+        <option *ngFor="let day of days" [ngValue]="day.value">{{ day.label }}</option>
+    </select>
+    <div class="slash">/</div>
+    <!--select month-->
+    <select name="month" class="date-pick" [(ngModel)]="selectedMonth" (change)="onDateChange()">
+        <option *ngFor="let month of months" [ngValue]="month.value">{{ month.label }}</option>
+    </select>
+    <div class="slash">/</div>
+    <!--select year-->
+    <select name="year" class="date-pick" [(ngModel)]="selectedYear" (change)="onDateChange()">
+        <option *ngFor="let year of years" [ngValue]="year.value">{{ year.label }}</option>
+    </select>
+</div>

@@ -1,0 +1,80 @@
+@import '../../hc-theme';
+
+.high-contrast {
+  :host {
+    /deep/ {
+      .settings-header {
+        background-color: $hc-background-color;
+        border-bottom-color: $hc-border-color;
+
+        .settings-header-title {
+          color: $hc-color;
+        }
+      }
+
+      .settings-content {
+        background-color: $hc-background-color;
+      }
+
+      .settings-back {
+        a {
+          color: $hc-color;
+        }
+      }
+
+      .settings-back-icon {
+        fill: $hc-color;
+      }
+
+      .settings-reset {
+        background-color: $hc-background-color;
+        border-color: $hc-border-color;
+        color: $hc-color;
+      }
+
+      .settings-subheader {
+        color: $hc-color;
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    /deep/ {
+      .settings-header {
+        background-color: $hc-inverted-background-color;
+        border-bottom-color: $hc-inverted-border-color;
+
+        .settings-header-title {
+          color: $hc-inverted-color;
+        }
+      }
+
+      .settings-content {
+        background-color: $hc-inverted-background-color;
+      }
+
+      .settings-back {
+        a {
+          color: $hc-inverted-color;
+        }
+      }
+
+      .settings-back-icon {
+        fill: $hc-inverted-color;
+      }
+
+      .settings-reset {
+        background-color: $hc-inverted-background-color;
+        border-color: $hc-inverted-border-color;
+        color: $hc-inverted-color;
+      }
+
+      .settings-subheader {
+        color: $hc-inverted-color;
+      }
+    }
+  }
+}
+

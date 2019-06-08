@@ -1,0 +1,36 @@
+// dob css
+@import '../../../theme';
+
+.input-group {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.date-pick {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  appearance: none;
+  background: $auth-dob-background-color url('date-dropdown.svg') no-repeat 90% 50%;
+  background-size: 5%;
+  border-radius: 0;
+  display: inline-block;
+  font-size: inherit;
+  height: 50px;
+  letter-spacing: normal;
+  padding: 10px;
+  width: 28.1%;
+
+  &::--ms-expand {
+    // For IE 11
+    display: none;
+  }
+}
+
+.slash {
+  color: $auth-dob-slash-color;
+  display: inline-block;
+  font-size: 1.5rem;
+}

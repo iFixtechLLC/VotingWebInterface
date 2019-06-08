@@ -1,0 +1,17 @@
+<div class="dialog" [class.warning]="level === 'warning'" [class.error]="level === 'error'">
+    <div class="header">
+        <svg-icon src="assets/icons/action/warning-outline.svg" class="dialog-icon"></svg-icon>
+        <div class="header-title">{{ title | async }}</div>
+    </div>
+    <div class="content">
+        <markdown [md]="content | async"></markdown>
+    </div>
+    <div class="actions">
+        <button type="button" *ngIf="isPrompt" class="cancel" (click)="cancel()">
+            {{ cancelText | async }}
+        </button>
+        <button type="button" class="confirm" (click)="confirm()">
+            {{ confirmText | async }}
+        </button>
+    </div>
+</div>

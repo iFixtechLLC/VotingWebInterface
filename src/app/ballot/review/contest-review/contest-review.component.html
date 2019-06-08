@@ -1,0 +1,36 @@
+<div class="contest-review-header">
+    <div class="contest-review-text">
+        <div class="contest-review-title">
+            {{ title | async }}
+        </div>
+        <div class="contest-review-selected" *ngIf="selection">
+            {{ selection.selectedCount }} / {{ contest.rules.maxselectable }} {{ selected | async }}
+        </div>
+    </div>
+</div>
+<inline-warning *ngIf="undervoted" [message]="undervoteWarning | async"></inline-warning>
+<inline-warning *ngIf="writeInSelection && emptyWriteIn" [message]="writeInWarning | async"></inline-warning>
+<inline-warning *ngIf="informal" [message]="informalWarning | async"></inline-warning>
+<div class="contest-review-choices">
+    <div class="choice-list" *ngIf="contest.rules.voting === 'simple'">
+        <simple-choice-summary *ngFor="let selectedChoice of selectedChoices" [choice]="selectedChoice.choice"></simple-choice-summary>
+        <div class="write-in" *ngIf="writeInSelection">
+            <div class="write-in-value">
+                {{ writeInSelection.choice }}
+            </div>
+            {{ writeIn | async }}
+        </div>
+    </div>
+    <div class="choice-list" *ngIf="contest.rules.voting === 'ranked-choice'">
+            <ranked-choice-summary *ngFor="let selectedChoice of selectedChoices" [choice]="selectedChoice.choice" [selection]="selectedChoice.selection"></ranked-choice-summary>
+            <div class="write-in" *ngIf="writeInSelection">
+                <div class="write-in-value">
+                    {{ writeInSelection.choice }}
+                </div>
+                {{ writeIn }}
+            </div>
+        </div>
+    <a class="change-selection" [routerLink]="['/ballot', 'contest', index]" (click)="logChange()">
+        {{ changeSelection | async }}
+    </a>
+</div>

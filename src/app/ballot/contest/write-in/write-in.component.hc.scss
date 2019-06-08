@@ -1,0 +1,33 @@
+@import '../simple-choice/simple-choice.component.hc';
+
+.high-contrast {
+  :host {
+    .write-in {
+      input {
+        background-color: $hc-background-color;
+        border-color: $hc-border-color;
+        color: $hc-color;
+
+        &:focus {
+          border-color: $hc-border-color;
+        }
+      }
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    .write-in {
+      input {
+        background-color: $hc-inverted-background-color;
+        border-color: $hc-inverted-border-color;
+        color: $hc-inverted-color;
+
+        &:focus {
+          border-color: $hc-inverted-border-color;
+        }
+      }
+    }
+  }
+}

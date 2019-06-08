@@ -1,0 +1,18 @@
+<div class="finish-container">
+    <div class="finish-content">
+        <div class="scroll-content">
+            <markdown [md]="message | async"></markdown>
+        </div>
+    </div>
+
+    <div class="elect-toolbar bottom">
+        <div class="toolbar-background"></div>
+        <div class="toolbar-content">
+            <div class="elect-action">
+                <button type="button" class="action-button" (click)="logout()">
+                    <span class="action-text">{{ logoutText | async }}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

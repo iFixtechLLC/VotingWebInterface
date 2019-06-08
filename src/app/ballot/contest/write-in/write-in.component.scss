@@ -1,0 +1,26 @@
+@import '../simple-choice/simple-choice.component';
+
+.choice {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.write-in {
+  padding: 5px 0 10px 60px;
+  width: 300px;
+
+  input {
+    border: 1px solid $contest-writein-input-border-color;
+    padding: 6px;
+    width: 100%;
+
+    &:focus {
+      border-color: $contest-choice-outline-color;
+      outline: none;
+    }
+
+    &[disabled] {
+      opacity: .65;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import '../../../../hc-theme';
+
+.high-contrast {
+  :host {
+    .contest-summary-text {
+      color: $hc-color;
+
+      &.done {
+        background-color: $hc-background-color;
+      }
+    }
+
+    .contest-summary-selected {
+      color: $hc-color;
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    .contest-summary-text {
+      color: $hc-inverted-color;
+
+      &.done {
+        background-color: $hc-inverted-background-color;
+      }
+    }
+
+    .contest-summary-selected {
+      color: $hc-inverted-color;
+    }
+  }
+}

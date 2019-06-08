@@ -1,0 +1,8 @@
+<a class="contest-summary-text no-select" [routerLink]="['/ballot', 'contest', index]" routerLinkActive="active" [ngClass]="{'done': isDone }">
+    <div class="contest-summary-title">
+        {{ title | async }}
+    </div>
+    <div class="contest-summary-selected">
+        {{ selectedCount }} / {{ contest.rules.maxselectable }} {{ selected | async }}
+    </div>
+</a>

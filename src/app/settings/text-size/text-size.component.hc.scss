@@ -1,0 +1,55 @@
+@import '../../../hc-theme';
+
+.high-contrast {
+  :host {
+    .option-button {
+      background-color: $hc-background-color;
+      border-color: $hc-border-color;
+    }
+
+    .active {
+      .option-button {
+        background-color: $hc-color;
+      }
+    }
+
+    .settings-line {
+      border-color: $hc-border-color;
+    }
+
+    .example-text-body {
+      border-color: $hc-border-color;
+    }
+
+    .text-size-icon {
+      fill: $hc-color;
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    .option-button {
+      background-color: $hc-inverted-background-color;
+      border-color: $hc-inverted-border-color;
+    }
+
+    .active {
+      .option-button {
+        background-color: $hc-inverted-color;
+      }
+    }
+
+    .settings-line {
+      border-color: $hc-inverted-border-color;
+    }
+
+    .example-text-body {
+      border-color: $hc-inverted-border-color;
+    }
+
+    .text-size-icon {
+      fill: $hc-inverted-color;
+    }
+  }
+}

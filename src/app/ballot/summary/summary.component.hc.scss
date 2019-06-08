@@ -1,0 +1,125 @@
+@import '../../../hc-theme';
+
+.high-contrast {
+  :host {
+    &.sidebar {
+      background-color: $hc-background-color;
+
+      .blackout-screen {
+        background-color: $hc-background-color;
+        border-color: $hc-border-color;
+      }
+
+      .ballot-header,
+      .summary-message,
+      .contest-summary-text,
+      .ballot-filler {
+        border-color: $hc-border-color;
+      }
+
+      .bottom {
+        border-color: $hc-border-color;
+      }
+
+      .elect-action {
+        &:only-child {
+          .action-button {
+            background-color: $hc-background-color;
+            border-color: $hc-border-color;
+          }
+
+          .action-text {
+            color: $hc-color;
+          }
+        }
+      }
+
+      .ballot-header {
+        border-color: $hc-border-color;
+
+        .ballot-header-title {
+          color: $hc-color;
+        }
+      }
+
+      /deep/ {
+        .contest-summary-text {
+          border-right-color: $hc-border-color;
+
+          &.active {
+            background-color: $hc-background-color;
+            border-color: $hc-border-color;
+          }
+        }
+      }
+    }
+
+    contest-summary {
+      border-color: $hc-border-color;
+    }
+  }
+}
+
+.inverted-contrast {
+  :host {
+    &.sidebar {
+      background-color: $hc-inverted-background-color;
+
+      .blackout-screen {
+        background-color: $hc-inverted-background-color;
+        border-color: $hc-inverted-border-color;
+      }
+
+      .ballot-header,
+      .summary-message,
+      .contest-summary-text,
+      .ballot-filler {
+        border-color: $hc-inverted-border-color;
+      }
+
+      .bottom {
+        border-color: $hc-inverted-border-color;
+
+        .toolbar-content {
+          border-color: $hc-inverted-border-color;
+        }
+      }
+
+      .elect-action {
+        &:only-child {
+          .action-button {
+            background-color: $hc-inverted-background-color;
+            border-color: $hc-inverted-border-color;
+          }
+
+          .action-text {
+            color: $hc-inverted-color;
+          }
+        }
+      }
+
+      .ballot-header {
+        border-color: $hc-inverted-border-color;
+
+        .ballot-header-title {
+          color: $hc-inverted-color;
+        }
+      }
+
+      /deep/ {
+        .contest-summary-text {
+          border-right-color: $hc-inverted-border-color;
+
+          &.active {
+            background-color: $hc-inverted-background-color;
+            border-color: $hc-inverted-border-color;
+          }
+        }
+      }
+    }
+
+    contest-summary {
+      border-color: $hc-inverted-border-color;
+    }
+  }
+}

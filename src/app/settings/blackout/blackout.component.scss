@@ -1,0 +1,51 @@
+@import '../../../theme';
+
+.settings-header {
+  margin-bottom: 10px;
+}
+
+.settings-menu {
+  display: block;
+  padding: 0 15px;
+}
+
+.active-value {
+  font-weight: bold;
+}
+
+.blackout-toggle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0;
+}
+
+.blackout-toggle-button {
+  background-color: $settings-blackout-button-background-color;
+  border: 2px solid $settings-blackout-button-color;
+  height: 240px;
+  transition: background-color .25s ease-in-out, border-color .25s ease-in-out;
+  width: 240px;
+
+  .blackout-icon {
+    display: inline-block;
+    fill: $settings-blackout-button-color;
+    height: 180px;
+    transition: fill .25s ease-in-out;
+    width: 180px;
+  }
+
+  &.active {
+    background-color: $settings-blackout-button-active-background-color;
+    border-color: $settings-blackout-button-active-color;
+
+    .blackout-icon {
+      fill: $settings-blackout-button-active-color;
+    }
+  }
+}
+
+.blackout-status {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}

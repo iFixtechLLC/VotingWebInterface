@@ -1,0 +1,41 @@
+@import '../../../../theme';
+
+:host {
+  display: block;
+}
+
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
+.contest-summary-text {
+  color: $contest-summary-color;
+  cursor: pointer;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70px;
+  padding: 10px 15px;
+  text-decoration: none;
+
+  &.done {
+    background-color: $contest-summary-done-background-color;
+
+    .contest-summary-title {
+      font-weight: bold;
+    }
+  }
+}
+
+.contest-summary-title {
+  font-size: 1.25rem;
+}
+
+.contest-summary-selected {
+  color: $contest-summary-selected-color;
+  font-size: 1rem;
+  margin-top: 5px;
+}

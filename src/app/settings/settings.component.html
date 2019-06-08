@@ -1,0 +1,16 @@
+<div class="settings-content">
+    <div class="scroll-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<div class="elect-toolbar bottom">
+    <div class="toolbar-background"></div>
+    <div class="toolbar-content">
+        <div class="elect-action">
+            <a class="action-button" [routerLink]="returnPath" [queryParams]="returnParams">
+                <span class="action-text">{{ return | async }}</span>
+            </a>
+        </div>
+    </div>
+</div>

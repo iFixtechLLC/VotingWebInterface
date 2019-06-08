@@ -1,0 +1,31 @@
+<div class="settings-header">
+    <div class="settings-back">
+        <a [routerLink]="['../']">
+            <svg-icon class="settings-back-icon" src="assets/icons/navigation/carrot-left.svg"></svg-icon>
+            {{ back | async }}
+        </a>
+    </div>
+    <button type="button" class="settings-reset" (click)="resetContrast()">
+        {{ reset | async }}
+    </button>
+</div>
+<div class="settings-subheader">
+    {{ contrastSub | async }}
+</div>
+<div class="settings-menu">
+    <div class="settings-option" [ngClass]="{ 'active': activeContrast === 'normal' }">
+        <button type="button" (click)="setContrast('normal')" id="normalContrast" class="option-button normal">
+            {{ normalContrast | async }}
+        </button>
+    </div>
+    <div class="settings-option" [ngClass]="{ 'active': activeContrast === 'high' }">
+        <button type="button" (click)="setContrast('high')" id="highContrast" class="option-button bow">
+            {{ bowContrast | async }}
+        </button>
+    </div>
+    <div class="settings-option" [ngClass]="{ 'active': activeContrast === 'inverted' }">
+        <button type="button" (click)="setContrast('inverted')" id="invertedContrast" class="option-button wob">
+            {{ wobContrast | async }}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+@import '../../../theme';
+
+.ballot-header {
+  border-bottom: 0;
+
+  .ballot-header-title {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+}
+
+.scroll-content {
+  &.review-scroll {
+    padding: 0;
+  }
+}
+
+.review-message {
+  display: block;
+  padding: 30px 15px;
+}
+
+.elect-toolbar {
+  &.bottom {
+
+    .toolbar-background {
+      display: block;
+    }
+
+    .action-button {
+      background-color: $review-button-background-color;
+      border-color: $review-button-border-color;
+
+      .action-text {
+        color: $review-button-color;
+        font-weight: normal;
+      }
+    }
+  }
+}

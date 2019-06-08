@@ -1,0 +1,113 @@
+@import '../../../../theme';
+
+:host {
+  border-bottom: 1px solid $contest-choice-border-color;
+  display: block;
+}
+
+.choice {
+  align-items: center;
+  display: flex;
+  min-height: 80px;
+  padding: 3px;
+
+  &.selected {
+    background-color: $contest-choice-selected-background-color;
+  }
+
+  .select-area {
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    flex: 1 1 0%;
+    padding: 0;
+
+    &[disabled] {
+      color: $contest-choice-disabled-color;
+      cursor: default;
+      opacity: .65;
+    }
+
+    &:focus {
+      border-color: $contest-choice-outline-color;
+      outline: none;
+    }
+  }
+
+  /deep/ {
+    .choice-icon {
+      g,
+      path {
+        fill: $contest-choice-icon-color;
+        stroke: $contest-choice-icon-color;
+      }
+    }
+  }
+}
+
+.select-inner {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  min-height: 65px;
+  padding: 3px 10px;
+}
+
+.choice-upper {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.choice-icon {
+  flex: 0 0 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.choice-text {
+  flex: 1 1 0%;
+}
+
+.choice-title,
+.choice-group {
+  padding: 0 15px;
+  text-align: left;
+}
+
+.choice-title {
+  font-size: 1.1rem;
+}
+
+.choice-group {
+  font-size: .9rem;
+}
+
+.choice-image {
+  border-radius: 6px;
+  margin: 0 0 0 10px;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.choice-description {
+  font-size: 1rem;
+  margin-top: 5px;
+  padding: 0 15px;
+  text-align: left;
+}
+
+.more-info {
+  border: 1px solid transparent;
+  color: $contest-choice-link-color;
+  cursor: pointer;
+  font-size: .9rem;
+  padding: 15px;
+  text-decoration: underline;
+
+  &:focus {
+    border-color: $contest-choice-outline-color;
+    color: $contest-choice-link-color;
+    outline: none;
+  }
+}

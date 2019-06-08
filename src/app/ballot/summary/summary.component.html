@@ -1,0 +1,37 @@
+<div class="ballot-content">
+    <!-- PRETTY SURE THIS IS WHAT I CALL THE LANDING PAGE TITLE / MESSAGE -->
+    <div class="blackout-screen" *ngIf="blackout">
+        <markdown [md]="blackoutMessage | async"></markdown>
+    </div>
+
+    <!-- THIS DIV ONLY SHOWS IF WE'RE ON A BALLOT PAGE -->
+    <div class="scroll-content summary-scroll" *ngIf="ballot">
+        <div class="ballot-header">
+            <div class="ballot-header-title">
+                {{ title | async }}
+            </div>
+        </div>
+        <markdown [md]="message | async" class="summary-message"></markdown>
+        <div class="summary-contests">
+            <contest-summary *ngFor="let contest of contests; let i = index"
+                [contest]="contest"
+                [index]="getIndex(contest)"
+            >
+            </contest-summary>
+        </div>
+        <div class="end-of-list">{{ endOfList | async }}</div>
+    </div>
+    <!-- end THIS DIV ONLY SHOWS IF WE'RE ON A BALLOT PAGE -->
+    <div class="ballot-filler"></div>
+</div>
+
+<div class="elect-toolbar bottom">
+    <div class="toolbar-background"></div>
+    <div class="toolbar-content">
+        <div class="elect-action">
+            <a class="action-button" [routerLink]="['/ballot', 'review']">
+                <span class="action-text">{{ review | async }}</span>
+            </a>
+        </div>
+    </div>
+</div>
